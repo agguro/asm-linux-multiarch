@@ -1,0 +1,33 @@
+.version 6.5
+.target sm_61
+.address_size 64
+
+.visible .entry gpu_clock(
+    .param .u64 a,
+    .param .u64 b,
+    .param .u64 c,
+    .param .u32 n
+) {
+    .reg .u32 %t1, %t2;
+    .reg .u64 %rd1;
+    .reg .f32 %f1, %f2;  // Added missing register declarations
+
+    // 1. Capture start clock cycle
+    mov.u32 %t1, %clock;
+
+    // 2. Load destination pointer 'c'
+    ld.param.u64 %rd1, [c];
+
+    // 3. Dummy work: capture end clock cycle
+    mov.u32 %t2, %clock;
+
+    // 4. Convert Integer Clocks to Float for your printf
+    cvt.rn.f32.u32 %f1, %t1;
+    cvt.rn.f32.u32 %f2, %t2;
+
+    // 5. Store to memory (using global state space)
+    st.global.f32 [%rd1], %f1;
+    st.global.f32 [%rd1+4], %f2;
+
+    ret;
+}
