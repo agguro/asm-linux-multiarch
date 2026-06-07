@@ -5,7 +5,7 @@
 	path = projects/entropy-deamon
 	url = git@github.com:agguro/asm-entropy-daemon.git
 [submodule "projects/cuda-complex-quadsolver"]
-	path = projects/cuda-complex-quadsolver
+	path = projects/complex-quadsolver
 	url = git@github.com:agguro/cuda-complex-quadsolver.git
 [submodule "projects/ticker-gbm"]
 	path = projects/ticker-gbm
