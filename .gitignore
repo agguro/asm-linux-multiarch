@@ -1,52 +1,24 @@
-# Prerequisites
-*.d
+# ==============================================================================
+# LOW-LEVEL FRAMEWORK: .GITIGNORE (CUDA & x86_64 Assembly)
+# ==============================================================================
 
-# Object files
+# 1. Toolchain Build Artifacts (Gegenereerd door as, ld en ptxas)
 *.o
-*.ko
 *.obj
-*.elf
+*.cubin
+*.ptx.res
+*.lst
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# 2. Centralized Output Directories
+# We negeren alle gecompileerde binaries en build-mappen overal in de boom
+bin/
+build/
 
-# Precompiled Headers
-*.gch
-*.pch
+# 3. Framework Logging (Afkomstig van de template_branch verkeersregelaars)
+*.log
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# 4. System & Editor Overrides
+.DS_Store
+Thumbs.db
+*~
+*.swp
