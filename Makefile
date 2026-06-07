@@ -1,13 +1,12 @@
 # ==============================================================================
-# ASM-LINUX-FRAMEWORK: UNIVERSELE ORCHESTRATOR
+# ASM-LINUX-MULTIARCH: ROOT MANAGEMENT FRAMEWORK
 # ==============================================================================
 
-# 1. DYNAMIC DISCOVERY & PARAMETERS
-# Zoekt flexibel naar submappen met een Makefile (tot 2 niveaus diep)
-SUBDIRS      := $(patsubst %/,%,$(dir $(shell find . -mindepth 2 -maxdepth 2 -name Makefile)))
+# Find any directory containing a Makefile between 2 and 3 levels deep.
+# This catches direct branches (./cuda) and nested subprojects (./projects/complex-quadsolver)
+SUBDIRS      := $(patsubst %/,%,$(dir $(shell find . -mindepth 2 -maxdepth 3 -name Makefile)))
 
-# Als we op het hoogste niveau starten, setten we de wet voor de PWD.
-# Indien al geëxporteerd door een hogere repo, blijft de oorspronkelijke PARENTROOT staan.
+# Set the absolute root based on PWD
 ifndef PARENTROOT
     export PARENTROOT := $(CURDIR)/
 endif
@@ -17,7 +16,7 @@ GLOBAL_BIN   := $(PARENTROOT)bin
 
 all: debug
 
-# 2. DIRECT EXECUTION LOOP
+# DIRECT EXECUTION LOOP
 debug release clean test: directories
 	@for dir in $(SUBDIRS); do \
 		echo "=============================================================================="; \
@@ -26,7 +25,6 @@ debug release clean test: directories
 		$(MAKE) -C $$dir $@ || exit 1; \
 	done
 
-# 3. UTILITIES
 directories:
 	@mkdir -p $(GLOBAL_BUILD)
 	@mkdir -p $(GLOBAL_BIN)
