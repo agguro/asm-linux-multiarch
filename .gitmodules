@@ -1,0 +1,3 @@
+[submodule "cuda"]
+	path = cuda
+	url = git@github.com:agguro/asm-linux-cuda.git
