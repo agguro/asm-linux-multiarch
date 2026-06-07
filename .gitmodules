@@ -1,3 +1,15 @@
 [submodule "cuda"]
 	path = cuda
 	url = git@github.com:agguro/asm-linux-cuda.git
+[submodule "projects/entropy-deamon"]
+	path = projects/entropy-deamon
+	url = git@github.com:agguro/asm-entropy-daemon.git
+[submodule "projects/cuda-complex-quadsolver"]
+	path = projects/cuda-complex-quadsolver
+	url = git@github.com:agguro/cuda-complex-quadsolver.git
+[submodule "projects/ticker-gbm"]
+	path = projects/ticker-gbm
+	url = git@github.com:agguro/ticker-gbm.git
+[submodule "projects/prng-engine"]
+	path = projects/prng-engine
+	url = git@github.com:agguro/asm-linux-prng-engine.git
