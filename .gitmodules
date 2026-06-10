@@ -7,3 +7,6 @@
 [submodule "projects/ticker-gbm"]
 	path = projects/ticker-gbm
 	url = git@github.com:agguro/ticker-gbm.git
+[submodule "x86_64"]
+	path = x86_64
+	url = git@github.com:agguro/asm-linux-x86_64.git
