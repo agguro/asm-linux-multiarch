@@ -3,22 +3,22 @@
 	url = https://github.com/agguro/asm-linux-cuda.git
 [submodule "projects/cuda-complex-quadsolver"]
 	path = projects/complex-quadsolver
-	url = https://github.com/cuda-complex-quadsolver.git
+	url = https://github.com/agguro/cuda-complex-quadsolver.git
 [submodule "projects/ticker-gbm"]
 	path = projects/ticker-gbm
-	url = https://github.com/ticker-gbm.git
+	url = https://github.com/agguro/ticker-gbm.git
 [submodule "x86_64"]
 	path = x86_64
-	url = https://github.com/asm-linux-x86_64.git
+	url = https://github.com/agguro/asm-linux-x86_64.git
 [submodule "riscv"]
 	path = riscv
-	url = https://github.com/asm-linux-riscv.git
+	url = https://github.com/agguro/asm-linux-riscv.git
 [submodule "aarch"]
 	path = aarch
-	url = https://github.com/asm-linux-aarch.git
+	url = https://github.com/agguro/asm-linux-aarch.git
 [submodule "esp32"]
 	path = esp32
-	url = https://github.com/asm-esp32.git
+	url = https://github.com/agguro/asm-esp32.git
 [submodule "avr"]
 	path = avr
-	url = https://github.com/asm-avr.git
+	url = https://github.com/agguro/asm-avr.git
