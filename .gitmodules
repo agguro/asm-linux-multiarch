@@ -22,3 +22,6 @@
 [submodule "avr"]
 	path = avr
 	url = https://github.com/agguro/asm-avr.git
+[submodule "projects/nuclideid"]
+	path = projects/nuclideid
+	url = https://github.com/agguro/nuclideid.git
